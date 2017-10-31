@@ -9,4 +9,16 @@ describe('App', () => {
   it('renders properly', () => {
     expect(app).toMatchSnapshot()
   })
+
+  it('contains a connected Wallet component', () => {
+    expect(app.find('Connect(Wallet)').exists()).toBe(true)
+  })
+
+  it('contains a connected Loot component', () => {
+    expect(app.find('Connect(Loot)').exists()).toBe(true)
+  })
+
+  it('contains a ling to the coindesk price page', () => {
+    expect(app.find('a').props().href).toBe('https://www.coindesk.com/price')
+  })
 })
